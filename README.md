@@ -46,7 +46,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install fastapi uvicorn websockets
 
 # Start the server
-uvicorn server:app --reload --port 8000
+uvicorn server:app --reload --host 0.0.0.0 --port 8000
 ```
 
 #### Frontend Setup
@@ -68,7 +68,7 @@ npm run dev
 - **Terminal client**: Use a WebSocket client like wscat
   ```bash
   npm install -g wscat
-  wscat -c ws://localhost:8000/ws
+  wscat -c ws://127.0.0.1:8000/ws
   ```
 
 ## Usage
