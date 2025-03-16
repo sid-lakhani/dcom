@@ -1,6 +1,8 @@
-# Real-Time WebSocket Chat
+# DCOM - Decentralised Communication
 
 A seamless real-time chat application built with FastAPI for the backend and Next.js for the frontend. This application supports both browser-based and terminal clients, providing a versatile communication platform.
+
+![DCOM - Decentralised Communication](./frontend/public/logo.png)
 
 ## Features
 
