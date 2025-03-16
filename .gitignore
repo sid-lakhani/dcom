@@ -1,0 +1,50 @@
+# 🛑 Node.js dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# 🛑 Python cache (Backend)
+__pycache__/
+backend/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🛑 Virtual Environments (Python)
+venv/
+backend/venv/
+env/
+backend/env/
+
+# 🛑 Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+frontend/.env
+backend/.env
+
+# 🛑 Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+backend/debug.log
+backend/*.log
+
+# 🛑 Build Files (Frontend)
+dist/
+.next/
+out/
+coverage/
+
+# 🛑 Build Files (Backend - Python)
+backend/build/
+backend/dist/
+backend/*.egg-info/
+
+# 🛑 Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
