@@ -82,71 +82,48 @@ npm run dev
 
 ### Terminal Client
 
-1. Connect using wscat: `wscat -c ws://localhost:8000/ws`
+1. Connect using wscat: `wscat -c ws://127.0.0.1:8000/ws`
 2. Enter your username when prompted
 3. Start chatting by typing messages and pressing Enter
-4. Terminal users will see messages in plain text format
+4. Notifications to show when users join or leave
 
 ## Project Structure
 
 ```
 .
-├── .gitignore               # Git ignore file
-├── LICENSE                  # Project license
-├── backend                  # Backend code
-│   └── server.py            # FastAPI WebSocket server
-└── frontend                 # Frontend code
-    ├── README.md            # Frontend specific README
-    ├── next-env.d.ts        # Next.js TypeScript declarations
-    ├── next.config.ts       # Next.js configuration
-    ├── package.json         # NPM package configuration
-    ├── postcss.config.mjs   # PostCSS configuration for Tailwind
-    ├── public               # Static assets
-    │   ├── file.svg
-    │   ├── globe.svg
-    │   ├── next.svg
-    │   ├── vercel.svg
-    │   └── window.svg
-    ├── src                  # Source code
-    │   └── app              # Next.js app directory
-    │       ├── favicon.ico  # Site favicon
-    │       ├── globals.css  # Global styles
-    │       ├── layout.tsx   # Root layout component
-    │       └── page.tsx     # Main chat page component
-    └── tsconfig.json        # TypeScript configuration
+├── .gitignore
+├── LICENSE                     # Project license
+├── README.md
+├── backend
+    └── server.py               # FastAPI WebSocket server
+└── frontend
+    ├── README.md
+    ├── next-env.d.ts
+    ├── next.config.ts
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.mjs
+    ├── public
+        ├── favicon.ico
+        └── logo.png
+    ├── src
+        └── app
+        │   ├── globals.css
+        │   ├── layout.tsx
+        │   └── page.tsx        # Main chat page component
+    └── tsconfig.json
 ```
-
-## Deployment
-
-### Backend Deployment Options
-
-- **Heroku** - Easy deployment with Procfile
-- **Deta** - Simple serverless deployment
-- **AWS Lambda** - For serverless architecture (requires adaptations)
-- **DigitalOcean/Linode** - For VPS deployment
-
-### Frontend Deployment Options
-
-- **Vercel** (recommended) - Perfect for Next.js applications
-- **Netlify** - Simple deployment from Git
-- **GitHub Pages** - Free hosting for static sites
 
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch (`git checkout -b feature`)
+3. Commit your changes (`git commit -m 'Added some amazing feature'`)
+4. Push to the branch (`git push origin feature`)
 5. Open a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgements
-
-- [FastAPI](https://fastapi.tiangolo.com/) for the powerful API framework
-- [Next.js](https://nextjs.org/) for the React framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
