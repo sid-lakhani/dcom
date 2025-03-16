@@ -116,15 +116,29 @@ npm run dev
     └── tsconfig.json
 ```
 
+## Future Scope 
+
+As the project evolves, several features and enhancements can be introduced to improve functionality, security, and user experience. Here are some potential future developments:  
+
+#### Security Enhancements  
+- **End-to-End Encryption (E2EE):** Implement AES or RSA encryption to ensure secure message exchange.  
+- **Self-Destructing Messages:** Allow users to send messages that automatically delete after a set time. 
+
+#### **Feature Enhancements**  
+- **Private Chat Rooms with Invite Codes:** Users can create personal chat rooms and generate unique codes to invite others.  
+- **File Sharing:** Enable users to send and receive images, videos, and documents.  
+- **Voice & Video Chat:** Integrate WebRTC for real-time voice and video communication. 
+
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+Contributions are welcome! Whether it’s fixing bugs, optimizing performance, or adding new features, every contribution helps improve DCOM.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature`)
-3. Commit your changes (`git commit -m 'Added some amazing feature'`)
-4. Push to the branch (`git push origin feature`)
-5. Open a Pull Request
+1. Check the [Future Scope](#future-scope) – See if there's an existing feature planned that you’d like to work on, or propose a new one.
+2. Fork the repository
+3. Create your feature branch (`git checkout -b feature-name`)
+4. Commit your changes (`git commit -m 'Added some amazing feature'`)
+5. Push to the branch (`git push origin feature-name`)
+6. Open a Pull Request
 
 ## License
 
