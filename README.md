@@ -1,40 +1,58 @@
-# DCOM - Decentralised Communication
+# **DCOM - Decentralized Communication**  
 
-A seamless real-time chat application built with FastAPI for the backend and Next.js for the frontend. This application supports both browser-based and terminal clients, providing a versatile communication platform.
+A seamless real-time chat application built with **FastAPI (backend) and Next.js (frontend).**  
+This application supports **both browser-based and terminal clients**, providing a versatile and extensible communication platform.  
 
-![DCOM - Decentralised Communication](./frontend/public/logo.png)
+![DCOM - Decentralized Communication](./frontend/public/logo.png)  
 
-## Features
+## **Features**  
 
-- ⚡ Real-time messaging using WebSockets
-- 💻 Support for both browser and terminal clients
-- 🔔 User join/leave notifications
-- 🎨 Clean, responsive UI for web clients
-- 📱 Mobile-friendly design
+- ⚡ **Real-time messaging** using WebSockets & WebRTC  
+- 💻 **Support for both browser and terminal clients**  
+- 🔔 **User join/leave notifications**  
+- 🎨 **Clean, responsive UI for web clients**  
+- 📱 **Mobile-friendly design**  
+- 🔒 **Future: Decentralized terminal chat via P2P**  
 
-## Tech Stack
+## **Tech Stack**  
 
-### Backend
-- **FastAPI** - Modern, high-performance web framework for building APIs
-- **WebSockets** - For real-time bidirectional communication
-- **Python 3.8+** - For server-side logic
+### **Backend**  
+- **FastAPI** - High-performance web framework for APIs  
+- **WebSockets** - For real-time communication  
+- **Python 3.8+** - For server-side logic  
 
-### Frontend
-- **Next.js** - React framework with server-side rendering
-- **TypeScript** - For type safety and better developer experience
-- **Tailwind CSS** - For responsive, utility-first styling
+### **Frontend**  
+- **Next.js** - React framework with server-side rendering  
+- **TypeScript** - For type safety and better DX  
+- **Tailwind CSS** - For responsive styling  
 
-## Getting Started
+## **Decentralized Communication Approach**  
 
-### Prerequisites
+DCOM currently supports **two modes of communication**:  
 
-- Python 3.8+
-- Node.js 14+
-- npm or yarn
+1. **Decentralized P2P (WebRTC)**
+   - Direct **peer-to-peer (P2P) messaging** without a server in between.  
+   - Messages are exchanged securely without central storage.  
 
-### Installation
+2. **Centralized (WebSockets)**
+   - Messages are routed via the backend WebSocket server.  
+   - Useful for ensuring real-time communication with a central control point.  
 
-#### Backend Setup
+🚀 **Upcoming Feature:**  
+📡 **Decentralized P2P Terminal Communication** – Soon, terminal clients will be able to communicate **fully peer-to-peer without any central server**.  
+
+---
+
+## **Getting Started**  
+
+### **Prerequisites**  
+- Python **3.8+**  
+- Node.js **14+**  
+- npm or yarn  
+
+### **Installation**  
+
+#### **Backend Setup**  
 
 ```bash
 # Navigate to backend directory
@@ -51,7 +69,7 @@ pip install fastapi uvicorn websockets
 uvicorn server:app --reload --host 0.0.0.0 --port 8000
 ```
 
-#### Frontend Setup
+#### **Frontend Setup**  
 
 ```bash
 # Navigate to frontend directory
@@ -64,32 +82,48 @@ npm install
 npm run dev
 ```
 
-### Accessing the Application
+### **Accessing the Application**  
 
-- **Web client**: Open your browser and navigate to `http://localhost:3000`
-- **Terminal client**: Use a WebSocket client like wscat
+- **Web client:** Open your browser and navigate to `http://localhost:3000`  
+- **Terminal client (WebSockets - Centralized)**  
   ```bash
   npm install -g wscat
   wscat -c ws://127.0.0.1:8000/ws
   ```
 
-## Usage
+---
 
-### Browser Client
+## **Usage**  
 
-1. Enter your username and click "Join"
-2. Type messages in the input field and press Enter or click "Send"
-3. Messages from other users appear in real-time
-4. System notifications show when users join or leave
+### **Browser Client**  
+Browser clients can connect using **either WebRTC (P2P) or WebSockets (centralized):**  
 
-### Terminal Client
+#### **1. WebRTC Mode (P2P - Decentralized)**  
+- Clients communicate **directly** without a central server.  
+- Uses **`/signal/{room_id}`** for signaling.  
+- Users can **create** a new room or **join an existing** one.  
+- **Rooms self-destruct** when all members leave.  
 
-1. Connect using wscat: `wscat -c ws://127.0.0.1:8000/ws`
-2. Enter your username when prompted
-3. Start chatting by typing messages and pressing Enter
-4. Notifications to show when users join or leave
+#### **2. WebSockets Mode (Centralized)**  
+- Messages are routed through the **WebSocket server.**  
+- More reliable for persistent communication.  
 
-## Project Structure
+### **Terminal Client**  
+#### **1. WebSockets Mode (Centralized)**  
+```bash
+wscat -c ws://127.0.0.1:8000/ws
+```
+- Enter your username when prompted.  
+- Start chatting by typing messages and pressing Enter.  
+- Notifications show when users join or leave.  
+
+#### **2. (Upcoming) P2P Terminal Chat (Decentralized)**  
+- Terminal clients will be able to **connect directly via WebRTC P2P**.  
+- Eliminates the need for a WebSocket server.  
+
+---
+
+## **Project Structure**  
 
 ```
 .
@@ -97,7 +131,7 @@ npm run dev
 ├── LICENSE                     # Project license
 ├── README.md
 ├── backend
-    └── server.py               # FastAPI WebSocket server
+│   └── server.py               # FastAPI WebSocket server(upcoming)
 └── frontend
     ├── README.md
     ├── next-env.d.ts
@@ -106,40 +140,47 @@ npm run dev
     ├── package.json
     ├── postcss.config.mjs
     ├── public
-        ├── favicon.ico
-        └── logo.png
+    │   ├── favicon.ico
+    │   └── logo.png
     ├── src
-        └── app
-        │   ├── globals.css
-        │   ├── layout.tsx
-        │   └── page.tsx        # Main chat page component
+    │   └── app
+    │       ├── globals.css
+    │       ├── layout.tsx
+    │       ├── page.tsx        # Main chat page component
     └── tsconfig.json
 ```
 
-## Future Scope 
+---
 
-As the project evolves, several features and enhancements can be introduced to improve functionality, security, and user experience. Here are some potential future developments:  
+## **Future Scope**  
 
-#### Security Enhancements  
-- **End-to-End Encryption (E2EE):** Implement AES or RSA encryption to ensure secure message exchange.  
-- **Self-Destructing Messages:** Allow users to send messages that automatically delete after a set time. 
+As DCOM evolves, several **enhancements** can be introduced:  
 
-#### **Feature Enhancements**  
-- **Private Chat Rooms with Invite Codes:** Users can create personal chat rooms and generate unique codes to invite others.  
-- **File Sharing:** Enable users to send and receive images, videos, and documents.  
-- **Voice & Video Chat:** Integrate WebRTC for real-time voice and video communication. 
+### **Security Enhancements**  
+- **End-to-End Encryption (E2EE)**: AES or RSA-based secure message exchange  
+- **Self-Destructing Messages**: Messages that auto-delete after a set time  
 
-## Contributing
+### **Feature Enhancements**  
+- **Fully Decentralized P2P Terminal Chat**  
+- **Private Chat Rooms with Invite Codes**  
+- **File Sharing** (P2P and WebSocket-based)  
+- **Voice & Video Chat** (via WebRTC)  
 
-Contributions are welcome! Whether it’s fixing bugs, optimizing performance, or adding new features, every contribution helps improve DCOM.
+---
 
-1. Check the [Future Scope](#future-scope) – See if there's an existing feature planned that you’d like to work on, or propose a new one.
-2. Fork the repository
-3. Create your feature branch (`git checkout -b feature-name`)
-4. Commit your changes (`git commit -m 'Added some amazing feature'`)
-5. Push to the branch (`git push origin feature-name`)
-6. Open a Pull Request
+## **Contributing**  
 
-## License
+Contributions are welcome! Whether it’s **fixing bugs, optimizing performance, or adding new features**, every contribution improves DCOM.  
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. Check the **Future Scope**  
+2. Fork the repository  
+3. Create your feature branch (`git checkout -b feature-name`)  
+4. Commit your changes (`git commit -m 'Added some amazing feature'`)  
+5. Push to the branch (`git push origin feature-name`)  
+6. Open a **Pull Request**  
+
+---
+
+## **License**  
+
+This project is licensed under the **MIT License** – see the `LICENSE` file for details.  
